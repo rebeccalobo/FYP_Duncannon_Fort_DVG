@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="781dp"
+    android:layout_height="300dp"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true">
+
+
+    <TextView
+        android:id="@+id/swiper_description"
+        android:layout_width="656dp"
+        android:layout_height="46dp"
+        android:layout_above="@+id/swiper_image"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="1dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/swiper_image"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="2dp"
+        app:srcCompat="@mipmap/compass" />
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">FYPTEST</string>
+    <string name="Compass">Welcome to your Digital Guide</string>
+    <string name="History">Travel back in time to learn Duncannon Fort"'"s story</string>
+    <string name="Fort">Interact with your surroundings to unlock digital content</string>
+    <string name="access_token">pk.eyJ1IjoicmxvYm8yIiwiYSI6ImNrNXkzN2ZjbzBveW4zbm54cHlpM3NwbXYifQ.XmPCLtYllwEFbVr-VsS2Vg</string>
+    <string name="title_activity_map2">MapActivity2</string>
+    <string name="title_map">Map</string>
+    <string name="title_chapters">Chapters</string>
+    <string name="title_ar">Augmented Reality</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="user_location_permission_not_granted">permission to explain</string>
+    <string name="user_location_permission_explanation">permission not granted</string>
+    <string name="clicked_symbol_toast">you have short clicked the marker </string>
+    <string name="long_clicked_symbol_toast">you have long clicked the marker</string>
+    <string name="clicked_symbol_toast_start">start clicked!</string>
+    <string name="clicked_symbol_toast_icon">icon click successful!</string>
+
+    <string name="rv_card_chapter">Chapter %1$d</string>
+
+    <string-array name="name_array">
+
+        <item>Chapter 1 Title</item>
+        <item>Chapter 2 Title</item>
+        <item>Chapter 3 Title</item>
+        <item>Chapter 4 Title</item>
+        <item>Chapter 5 Title</item>
+
+    </string-array>
+    <string-array name="desc_array">
+
+        <item>Chapter 1 Desc</item>
+        <item>Chapter 2 Desc</item>
+        <item>Chapter 3 Desc</item>
+        <item>Chapter 4 Desc</item>
+        <item>Chapter 5 Desc</item>
+
+    </string-array>
+
+</resources>
