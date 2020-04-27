@@ -380,7 +380,7 @@ public class MapFragment extends Fragment {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-
+            //TODO
         }
     };
 }
