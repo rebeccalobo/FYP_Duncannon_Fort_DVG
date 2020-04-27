@@ -1,5 +1,9 @@
 package com.example.fyptest.bottomnav.map;
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.graphics.PointF;
 import android.graphics.Rect;
@@ -17,6 +21,9 @@ import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 import com.example.fyptest.R;
+import com.kiowa.bluetoothlocatability.BluetoothLeService;
+import com.kiowa.bluetoothlocatability.utilities.BeaconScreenPoint;
+import com.kiowa.bluetoothlocatability.utilities.Constants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Geometry;
@@ -222,6 +229,21 @@ public class MapFragment extends Fragment {
                 return true;
             });
 
+            //region location stuff kiowa
+//            IntentFilter i_filter = new IntentFilter();
+//            i_filter.addAction(Constants.RESULTS);
+//            getApplicationContext().registerReceiver(receiver, i_filter);
+//            HashMap<Integer, BeaconScreenPoint> bsp_map = new HashMap<>();
+//
+//            for(Map.Entry<Integer,LatLng> entry : hotspot_coordinates.entrySet()){
+//                PointF point = mapboxMap.getProjection().toScreenLocation(entry.getValue());
+//                bsp_map.put(entry.getKey(), new BeaconScreenPoint(point.x , point.y));
+//            }
+//            final Intent intent = new Intent(getApplicationContext(), BluetoothLeService.class);
+//            intent.putExtra("Beacons", bsp_map);
+//            getApplicationContext().startService(intent);
+            //endregion
+
             locationAdapter = new RecyclerViewAdapter(createRecyclerViewLocations(), mapboxMap);
             initFeatureCollection();
             initMarkerIcons(style);
@@ -354,4 +376,11 @@ public class MapFragment extends Fragment {
 
         return root;
     }
+    private BroadcastReceiver receiver = new BroadcastReceiver(){
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+        }
+    };
 }

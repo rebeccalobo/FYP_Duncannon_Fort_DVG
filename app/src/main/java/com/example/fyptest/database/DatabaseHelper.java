@@ -12,14 +12,11 @@ import java.util.HashMap;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "MyDBName.db";
-    public static final String CONTACTS_TABLE_NAME = "contacts";
-    public static final String CONTACTS_COLUMN_ID = "id";
-    public static final String CONTACTS_COLUMN_NAME = "name";
-    public static final String CONTACTS_COLUMN_EMAIL = "email";
-    public static final String CONTACTS_COLUMN_STREET = "street";
-    public static final String CONTACTS_COLUMN_CITY = "place";
-    public static final String CONTACTS_COLUMN_PHONE = "phone";
+    public static final String DATABASE_NAME = "Chapters.db";
+    public static final String CONTACTS_TABLE_NAME = "chapters";
+    public static final String CONTACTS_COLUMN__CHAP_ID = "id";
+    public static final String CONTACTS_COLUMN_CHAP_CONTENT = "content";
+    public static final String CONTACTS_COLUMN_CHAP_IMAGES = "images";
     private HashMap hp;
 
     public DatabaseHelper(Context context) {
@@ -30,33 +27,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
         db.execSQL(
-                "create table contacts " +
-                        "(id integer primary key, name text,phone text,email text, street text,place text)"
+                "create table chapters " +
+                        "(id integer primary key, content text)"
         );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // TODO Auto-generated method stub
-        db.execSQL("DROP TABLE IF EXISTS contacts");
+        db.execSQL("DROP TABLE IF EXISTS chapters");
         onCreate(db);
-    }
-
-    public boolean insertContact (String name, String phone, String email, String street,String place) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("phone", phone);
-        contentValues.put("email", email);
-        contentValues.put("street", street);
-        contentValues.put("place", place);
-        db.insert("contacts", null, contentValues);
-        return true;
     }
 
     public Cursor getData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
+        Cursor res =  db.rawQuery( "select * from chapters where id="+id+"", null );
         return res;
     }
 
@@ -66,26 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateContact (Integer id, String name, String phone, String email, String street,String place) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("phone", phone);
-        contentValues.put("email", email);
-        contentValues.put("street", street);
-        contentValues.put("place", place);
-        db.update("contacts", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
-        return true;
-    }
-
-    public Integer deleteContact (Integer id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("contacts",
-                "id = ? ",
-                new String[] { Integer.toString(id) });
-    }
-
-    public ArrayList<String> getAllCotacts() {
+    public ArrayList<String> getChapters() {
         ArrayList<String> array_list = new ArrayList<String>();
 
         //hp = new HashMap();
@@ -94,7 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         res.moveToFirst();
 
         while(res.isAfterLast() == false){
-            array_list.add(res.getString(res.getColumnIndex(CONTACTS_COLUMN_NAME)));
+            array_list.add(res.getString(res.getColumnIndex(CONTACTS_COLUMN_CHAP_CONTENT)));
             res.moveToNext();
         }
         return array_list;

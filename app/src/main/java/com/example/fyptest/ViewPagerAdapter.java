@@ -44,7 +44,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
 
     public Object instantiateItem(ViewGroup cont, int pos){
-        mInflater = (LayoutInflater) mCtx.getSystemService(mCtx.LAYOUT_INFLATER_SERVICE);
+        mInflater = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = mInflater.inflate(R.layout.intro_swiper_layout,cont,false);
         ImageView mImage = view.findViewById(R.id.swiper_image);
         TextView mDesc = view.findViewById(R.id.swiper_description);
