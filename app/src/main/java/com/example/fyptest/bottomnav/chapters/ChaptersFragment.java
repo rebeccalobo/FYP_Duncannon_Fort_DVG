@@ -41,7 +41,7 @@ public class ChaptersFragment extends Fragment {
         bookFlipPageTransformer.setScaleAmountPercent(10f);
         // Assign the page transformer to the ViewPager.
         myViewPager.setPageTransformer(true, bookFlipPageTransformer);
-
+//TODO
 //        myViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 //            @Override
 //            public void onPageScrolled(int i, float v, int i2) {
