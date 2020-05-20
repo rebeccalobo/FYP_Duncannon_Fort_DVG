@@ -1,6 +1,8 @@
 package com.example.fyptest;
 
 import android.Manifest;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -41,6 +43,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setItemRippleColor(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimary)));
+        navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorText)));
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
 

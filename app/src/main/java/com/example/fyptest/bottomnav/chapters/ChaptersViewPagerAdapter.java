@@ -6,13 +6,13 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.fyptest.R;
@@ -20,7 +20,7 @@ import com.example.fyptest.R;
 public class ChaptersViewPagerAdapter extends PagerAdapter {
 
     Context mCtx;
-    String[] nameArray;
+    String[] nameArray, descArray, contentArray;
     LayoutInflater mInflater;
 
     public ChaptersViewPagerAdapter(Context ctx){
@@ -31,9 +31,11 @@ public class ChaptersViewPagerAdapter extends PagerAdapter {
             R.mipmap.bridge,
             R.mipmap.cannon,
             R.mipmap.knight,
-            R.mipmap.cannon,
+            R.mipmap.transport,
             R.mipmap.lighthouse,
     };
+
+
     @Override
     public int getCount() {
         return images.length;
@@ -49,15 +51,31 @@ public class ChaptersViewPagerAdapter extends PagerAdapter {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public Object instantiateItem(ViewGroup cont, int pos){
         nameArray = mCtx.getResources().getStringArray(R.array.name_array);
+        descArray = mCtx.getResources().getStringArray(R.array.desc_array);
+        contentArray = mCtx.getResources().getStringArray(R.array.content_array);
+
+
 
         mInflater = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = mInflater.inflate(R.layout.intro_swiper_layout,cont,false);
+        View view = mInflater.inflate(R.layout.chapters_swiper_layout,cont,false);
         view.setBackgroundColor(Color.WHITE);
+
         ImageView mImage = view.findViewById(R.id.swiper_image);
-        TextView mDesc = view.findViewById(R.id.swiper_description);
+        GridView gv = view.findViewById(R.id.grid);
+        TextView mName = view.findViewById(R.id.swiper_name);
+        TextView mDesc = view.findViewById(R.id.swiper_desc);
+        TextView mContent = view.findViewById(R.id.swiper_content);
+
         mImage.setImageResource(images[pos]);
-        mDesc.setText(nameArray[pos]);
+        gv.setAdapter(new ChapterImagesAdapter(mCtx));
+        mName.setText(nameArray[pos]);
+        mDesc.setText(descArray[pos]);
+        mContent.setText(contentArray[pos]);
+
+        mName.setTextColor(Color.BLACK);
         mDesc.setTextColor(Color.BLACK);
+        mContent.setTextColor(Color.BLACK);
+
         cont.addView(view);
         return view;
     }

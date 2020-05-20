@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.fyptest.bottomnav.ar.NotificationsFragment"
+        android:name="com.example.fyptest.bottomnav.ar.ARFragment"
         android:label="@string/title_ar"
         tools:layout="@layout/fragment_ar" />
 </navigation>

@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/swiper_description"
+        android:id="@+id/swiper_name"
         android:layout_width="656dp"
         android:layout_height="46dp"
         android:layout_above="@+id/swiper_image"

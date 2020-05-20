@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.fyptest.R;
-import com.example.fyptest.database.DatabaseHelper;
+//import com.example.fyptest.database.DatabaseHelper;
 import com.wajahatkarim3.easyflipviewpager.BookFlipPageTransformer;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class ChaptersFragment extends Fragment {
 
     private ViewPager myViewPager;
     private ChaptersViewPagerAdapter pagerAdapter;
-    private DatabaseHelper dbHelper;
+//    private DatabaseHelper dbHelper;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -42,6 +42,25 @@ public class ChaptersFragment extends Fragment {
         // Assign the page transformer to the ViewPager.
         myViewPager.setPageTransformer(true, bookFlipPageTransformer);
 
+//        myViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int i, float v, int i2) {
+//                //Toast.makeText(MyActivity.this, i+"  Is Selected  "+data.size(), Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onPageSelected( int i) {
+//                // here you will get the position of selected page
+//                maintain = i;
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int i) {
+//
+//            }
+//        });
+
+
 //        dbHelper = new DatabaseHelper(getContext());
 //        ArrayList arrayList = dbHelper.getChapters();
 
@@ -51,6 +70,10 @@ public class ChaptersFragment extends Fragment {
 
 
         return root;
+    }
+
+    public int getcurrentpage(){
+        return myViewPager.getCurrentItem();
     }
 
 //    public static final class ChapterPagerAdapter extends FragmentPagerAdapter{

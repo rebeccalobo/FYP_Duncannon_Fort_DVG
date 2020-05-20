@@ -20,20 +20,76 @@
 
     <string-array name="name_array">
 
-        <item>Chapter 1 Title</item>
-        <item>Chapter 2 Title</item>
-        <item>Chapter 3 Title</item>
-        <item>Chapter 4 Title</item>
-        <item>Chapter 5 Title</item>
+        <item>Chapter 1 The Drawbridge</item>
+        <item>Chapter 2 The Cannons</item>
+        <item>Chapter 3 The Courtyard</item>
+        <item>Chapter 4 The Naval Battle</item>
+        <item>Chapter 5 The Lighthouse</item>
 
     </string-array>
     <string-array name="desc_array">
 
-        <item>Chapter 1 Desc</item>
-        <item>Chapter 2 Desc</item>
-        <item>Chapter 3 Desc</item>
-        <item>Chapter 4 Desc</item>
-        <item>Chapter 5 Desc</item>
+        <item>Begin your journey by storming the gates of Duncannon Fort</item>
+        <item>Have a blast with some of the fortress"'"s iconic defenses</item>
+        <item>March along and begin your new life as a Duncannon Fort recruit</item>
+        <item>Find out why Duncannon Fort was one of the most strategic coastal fortifications in Ireland</item>
+        <item>Steer yourself to the lighthouse to discover its clever way of guiding ships</item>
+
+    </string-array>
+    <string-array name="content_array">
+
+        <item>The very first siege of Duncannon Fort took place between 25 January and 18 March 1645. It was investigated in the course of the Irish Battlefields Project as having the potential to be interpreted as a ‘battle’.
+            Duncannon was one of a number of strategically important coastal fortifications in Ireland.
+            Situated half-way between the town of New Ross and Hook Head it was a vital stronghold during the Confederate Wars (1641–1652) offering potential control of a major channel of communication between Waterford port (and by extension New Ross) and Continental Europe.
+            By its very location, Duncannon Fort had several naturally occurring defensive features.
+            Situated on a narrow rocky peninsula, the sea provided a natural defence on the north-west, west and south.
+            Access from the mainland to the peninsula was restricted by building a moat and erecting storm poles.
+            The gate also had a drawbridge, which could be retracted during a siege. Beyond this rampart there were further defences that included a redoubt, two strong outworks and another triangular-shaped defensive structure.
+            The fort, however, was overlooked by higher ground which would give considerable advantage to any would-be aggressor especially if it possessed artillery.
+            Given its strategic location it was evident that the Confederates would not leave Duncannon unchallenged and when the English garrison at Cork under Lord Inchiquin decided to declare for Parliament in 1644,
+            Esmonde followed suit under pressure from his own. From early autumn 1644, Parliamentary ships were using the fort as a base for operations against Confederate shipping and attacks on the surrounding countryside were also stepped up.
+            As a result the Confederation of Kilkenny determined to try and capture it and the task was entrusted to General Thomas Preston, commander of the Leinster army.
+            Crucially, Preston’s force included an experienced French siege engineer, Nicholas La Loue, who had served with him in Flanders.
+</item>
+
+        <item> The cannons and gun emplacements which now stand here were once strong enough to admit 68-pounder Armstrong guns…mounted on travelling platforms and are capable of throwing shot and shell to the entrance of Waterford Harbour.
+            The fort was well equipped with 22 artillery pieces and was supported by the parliamentary squadron of four ships which lay anchored off Duncannon.
+            These ensured that some supplies could be brought to the fort and at least 38 men from the fleet were sent to assist in its defence.</item>
+
+        <item>Beginning in 1587 the fort went through various episodes of construction and neglect over the ensuing fifty years and at the time of the outbreak of the rebellion in Ulster, in October 1641, it was ill-equipped.
+            Of particular concern was the fact that there was no reliable water supply within the fort, and the garrison had to fetch water from a well outside its walls.The fort had an inner curtain wall defended by three mural towers.
+            Beyond this to the east was an outer wall with a strong, well-fortified gate and a rampart 24 feet thick.
+            Commanded by the veteran soldier, Sir Laurence Esmonde, the fort suffered from a shortage of soldiers, provisions and munitions.
+            Recognising the difficult situation Esmonde at first adopted a restrained attitude towards the insurgents until reinforcements arrived in early 1642.
+            Within Duncannon Fort the pro-government garrison consisted of c. 150 men around the time.
+            It was at this time that an intermittent siege of the fort was undertaken but, apart from various skirmishes and raids involving the soldiers and insurgents, the latter were unsuccessful in their attempts to take the fort.
+            The decision to besiege it appears largely to have been a reaction to the marauding raids by the garrison into the countryside seeking prey and other supplies (Murphy 2012).
+            Special buildings surround the courtyard which were dedicated to housing the troops and storing supplies.
+            Contemporary sources are not in agreement as to the exact numbers of troops at his command but there is a general consensus that he had approximately 1,500 infantry soldiers and large number of ordnance including mortars.</item>
+
+        <item>Little is known about this wreck apart from the information that has been gleaned from the half dozen fragmented timbers that were recovered from the dredge head in 2003 during the archaeological monitoring undertaken by the Underwater Archaeology Unit,
+            National Monuments Service (NMS) of the dredging programme at that time. These comprised oak timbers detached from a more substantial structure and made up of a number of both framing and planking timbers. As the timbers blocked the head of the dredger it
+            was lifted out of the water and this allowed both the timbers to be recovered but also a location to be ascertained for where the blockage occurred and thus a location for the wreck site itself. Subsequent dendrochronological dating carried out by Dr Aoife Daly
+            supplied a date from the timbers of 1543AD. Geophysical survey carried out by Dr Rory Quinn of the University of Coleraine in Ulster for NMS in 2003 imaged the sub–surface remains of the wreck and indications are that a substantial part of the wreck
+            may be buried up to 3m beneath the seabed, including possible decking timbers identifiable in the sub-bottom profile images. Whether Duncannon 2 Wreck was a sister-ship of the Post (W05126), another Tudor-period wreck lost nearby in Tramore Bay in 1566AD
+            or whether it is an unrelated vessel from the same period remains a mystery.This substantial wreck was discovered in 2002 during dredging operations by Waterford Port, when archaeological monitoring by The Archaeological Diving Company Ltd. (ADCO)
+            recovered timbers from the dredge head. Subsequent survey and investigation by ADCO identified it as a large, wooden wreck, lying partially exposed on the seabed, with both structural and decking timbers visible as well as a line of iron cannon
+            protruding from the wreck. The Underwater Archaeology Unit of the National Monuments Service carried out excavation at the wreck site in 2003 and 2004 and revealed more of the wreck and its constructional detail. The Duncannon 1 Wreck is a mid-17th century
+            wreck that was discovered through the archaeological monitoring of dredging operations undertaken by Waterford Port Company in 2002. Recovered at the time were several large timbers that allowed for a fixed location to be determined.
+            Prior to that, during geophysical survey of the harbor. Mr Donal Boland in 2000 had identified several anomalies that suggested a wreck was located in the general area. ADCO’s archaeological monitor on board was able to suspend dredging in that area
+            when timbers blocked the dredge head and subsequent dive inspection and assessment by ADCO reported that a substantial wooden wreck was located partly revealed in the soft sands of Duncannon Bar. A number of artefacts were recovered by ADCO at the time,
+            including rigging elements, anchor, quern stone, munitions, leather and pottery. Remaining on the seabed, protruding from the wreck structure, are a line of large and medium iron cannon, some possibly within their gun ports.
+            The Underwater Archaeology Unit (UAU) of the National Monuments Service carried out further survey and excavation at the wreck site in 2003 and 2004 to ascertain what part of the wreck was revealed and to obtain more detailed information on the guns
+            and lead objects within the wreck. Timber decking was exposed during the excavation and the four circular lead objects visible appear to be possible pissdales or ‘heads’ (toilets on board the ship) still within their structural location; the iron guns
+            comprise both large guns and one medium gun, which appear to be English. All bar the medium gun which lies horizontally on the seabed, are vertical with their breech ends facing upwards. Though a positive identification was not made, dating of the guns
+            suggests that the wreck dates to the mid-part of the 17th century (Ruth Browne gun assessment) and are English. During the Irish Rebellion period of 1643-1653, several ships were lost off or around Waterford Harbour, which was one of the main focal points
+            for Royalist, Confederate Irish and Parliamentary maritime engagement. In 1645 the Great Lewis, flagship of the Parliamentary Navy, engaged in supporting and supplying the Parliamentary troops in Duncannon Fort, was bombarded by the Royalist and
+            Confederate Irish during the siege of the Fort and was lost about a mile down harbour of the Fort. The dating evidence from Duncannon 1 Wreck, type of guns and size timbers revealed, which suggest they formed part of a large ship, suggests
+            the wreck may be that of the Great Lewis. More definitive evidence is required, however, to positively state that Duncannon 1 wreck is the Great Lewis or that of another ship lost in the harbour at that time></item>
+
+        <item>The lighthouse still remains in use to this very day! Located where the Suir / Barrow estuary opens out before joining the sea at Hook Head.
+            The lighthouse uses a clever colour code where the light flashes white when all is well, but red whenever a boat is heading for trouble!
+            Both Hook Head and Duncannon North lighthouses are visible from it.</item>
 
     </string-array>
 

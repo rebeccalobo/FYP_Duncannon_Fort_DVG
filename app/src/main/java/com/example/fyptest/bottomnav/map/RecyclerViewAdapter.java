@@ -8,7 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -85,12 +90,16 @@ public class RecyclerViewAdapter extends
         ItemClickListener clickListener;
 
 
-        MyViewHolder(View view) {
+        MyViewHolder(View view){
             super(view);
             chapter = view.findViewById(R.id.textview_chapter);
             name = view.findViewById(R.id.textview_name);
             description = view.findViewById(R.id.textview_description);
             rvButton = view.findViewById(R.id.button_start);
+            rvButton.setOnClickListener(view1 -> {
+                Navigation.findNavController(view).navigate(R.id.fragment_container);
+
+            });
             singleCard = view.findViewById(R.id.single_location_cardview);
             singleCard.setOnClickListener(this);
         }
@@ -102,6 +111,8 @@ public class RecyclerViewAdapter extends
         public void onClick(View view) {
             clickListener.onClick(view, getLayoutPosition());
         }
+
+
 
 
 

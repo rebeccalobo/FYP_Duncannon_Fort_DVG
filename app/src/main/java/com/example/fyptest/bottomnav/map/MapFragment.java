@@ -68,6 +68,7 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconSize;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textField;
 
 public class MapFragment extends Fragment {
 
@@ -209,8 +210,6 @@ public class MapFragment extends Fragment {
                     Float hotspotpoint_x = hotspotpoint.x;
                     Float hotspotpoint_y = hotspotpoint.y;
                     if(hotspotpoint_x <= end_x && hotspotpoint_x >= start_x && hotspotpoint_y <= end_y && hotspotpoint_y >= start_y){
-                        Toast.makeText(getActivity(),
-                                "Successfully clicked icon", Toast.LENGTH_SHORT).show();
                         SingleRecyclerViewLocation singleLocation = new SingleRecyclerViewLocation();
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                         Double lat_hotspot = ((LatLng) me.getValue()).getLatitude();
@@ -373,6 +372,7 @@ public class MapFragment extends Fragment {
                     });
 
         }));
+
 
         return root;
     }
