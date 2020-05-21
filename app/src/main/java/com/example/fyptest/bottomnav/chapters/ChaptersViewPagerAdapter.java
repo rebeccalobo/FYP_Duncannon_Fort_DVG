@@ -1,11 +1,14 @@
 package com.example.fyptest.bottomnav.chapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -13,11 +16,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.fyptest.HomeActivity;
 import com.example.fyptest.R;
+import com.google.zxing.integration.android.IntentIntegrator;
 
-public class ChaptersViewPagerAdapter extends PagerAdapter {
+public class ChaptersViewPagerAdapter extends PagerAdapter implements View.OnClickListener {
 
     Context mCtx;
     String[] nameArray, descArray, contentArray;
@@ -56,6 +62,7 @@ public class ChaptersViewPagerAdapter extends PagerAdapter {
 
 
 
+
         mInflater = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = mInflater.inflate(R.layout.chapters_swiper_layout,cont,false);
         view.setBackgroundColor(Color.WHITE);
@@ -65,6 +72,7 @@ public class ChaptersViewPagerAdapter extends PagerAdapter {
         TextView mName = view.findViewById(R.id.swiper_name);
         TextView mDesc = view.findViewById(R.id.swiper_desc);
         TextView mContent = view.findViewById(R.id.swiper_content);
+        Button btnScanBarcode = view.findViewById(R.id.btnScanBarcode);
 
         mImage.setImageResource(images[pos]);
         gv.setAdapter(new ChapterImagesAdapter(mCtx));
@@ -83,4 +91,10 @@ public class ChaptersViewPagerAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup cont, int pos, Object o){
         cont.removeView((RelativeLayout) o);
     }
+    @Override
+    public void onClick(View v) {
+        new IntentIntegrator(new Activity()).initiateScan();
+
+    }
 }
+

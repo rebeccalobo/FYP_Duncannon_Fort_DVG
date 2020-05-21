@@ -7,30 +7,15 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import androidx.viewpager.widget.ViewPager;
-
 import com.example.fyptest.R;
 
 public class ChapterImagesAdapter extends BaseAdapter {
 
     private final Context mCtx;
 
-
-    public ChapterImagesAdapter(Context ctx){
-        this.mCtx = ctx;
+    public ChapterImagesAdapter(Context mCtx) {
+        this.mCtx = mCtx;
     }
-
-    public int[] chapter_bridge = {
-            R.mipmap.cannon3
-    };
-    public int[] chapter_cannon = {
-            R.mipmap.cannon2,
-            R.mipmap.cannon3
-    };
-    public int[] chapter_courtyard = {
-            R.mipmap.court,
-            R.mipmap.court2
-    };
     public int[] chapter_naval = {
             R.mipmap.defenses,
             R.mipmap.defenses2,
@@ -38,19 +23,17 @@ public class ChapterImagesAdapter extends BaseAdapter {
             R.mipmap.naval2,
             R.mipmap.naval3,
             R.mipmap.naval4,
-            R.mipmap.naval5
-
-    };
-    public int[] chapter_lighthouse = {
+            R.mipmap.naval5,
+            R.mipmap.cannon3,
             R.mipmap.lighthouse_image,
             R.mipmap.lighthouse_image_2,
-            R.mipmap.lighthouse3
+            R.mipmap.lighthouse3,
+            R.mipmap.court,
+            R.mipmap.court2,
+            R.mipmap.cannon2,
+            R.mipmap.cannon3,
+
     };
-
-    public ChapterImagesAdapter(ChaptersViewPagerAdapter mCtx, Context mCtx1) {
-
-        this.mCtx = mCtx1;
-    }
 
     @Override
     public int getCount() {
@@ -70,6 +53,9 @@ public class ChapterImagesAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ImageView iv = new ImageView(mCtx);
+
+
+        iv.setImageResource(chapter_naval[i]);
 
 //        ViewPager myViewPager = viewGroup.findViewById(R.id.myViewPager);
 //

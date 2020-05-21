@@ -97,7 +97,7 @@ public class RecyclerViewAdapter extends
             description = view.findViewById(R.id.textview_description);
             rvButton = view.findViewById(R.id.button_start);
             rvButton.setOnClickListener(view1 -> {
-                Navigation.findNavController(view).navigate(R.id.fragment_container);
+                Navigation.findNavController(view1).navigate(R.id.navigation_dashboard);
 
             });
             singleCard = view.findViewById(R.id.single_location_cardview);

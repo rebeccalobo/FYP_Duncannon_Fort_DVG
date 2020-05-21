@@ -2,6 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     buildToolsVersion '29.0.2'
     defaultConfig {
         applicationId "com.example.fyptest"
@@ -24,6 +31,7 @@ android {
 }
 repositories {
     mavenCentral()
+    jcenter()
 }
 dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.1.0-beta.1'
@@ -47,6 +55,10 @@ dependencies {
     implementation 'com.github.eschao:android-PageFlip:1.0.2'
     implementation 'com.felipecsl.asymmetricgridview:library:2.0.1'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:4.3'
+    implementation 'com.google.android.gms:play-services-vision:11.8.0'
+    implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
 
 
 }

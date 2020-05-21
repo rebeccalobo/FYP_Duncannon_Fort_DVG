@@ -122,7 +122,8 @@ public class MapFragment extends Fragment {
                         " & " +
                         " value is: "+me.getValue());
                 LatLng latLng = (LatLng)me.getValue();
-                featureList.add(Feature.fromGeometry(Point.fromLngLat(latLng.getLongitude(), latLng.getLatitude())));
+                featureList.add(Feature.fromGeometry(Point.fromLngLat(latLng.getLongitude(),
+                        latLng.getLatitude())));
             }
             featureCollection = FeatureCollection.fromFeatures(featureList);
         }
@@ -339,7 +340,8 @@ public class MapFragment extends Fragment {
 
                                     // Calculate the download percentage
                                     double percentage = status.getRequiredResourceCount() >= 0
-                                            ? (100.0 * status.getCompletedResourceCount() / status.getRequiredResourceCount()) :
+                                            ? (100.0 * status.getCompletedResourceCount() /
+                                            status.getRequiredResourceCount()) :
                                             0.0;
 
                                     if (status.isComplete()) {
