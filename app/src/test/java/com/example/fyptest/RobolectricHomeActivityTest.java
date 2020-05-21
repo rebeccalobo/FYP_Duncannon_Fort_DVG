@@ -26,8 +26,6 @@ public class RobolectricHomeActivityTest {
                 .get();
     }
 
-
-
     @Test
     public void shouldHaveNavBarFragment() throws Exception
     {

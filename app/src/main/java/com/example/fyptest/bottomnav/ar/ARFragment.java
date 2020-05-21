@@ -39,10 +39,8 @@ public class ARFragment extends Fragment {
         });
 
 
-
         return root;
     }
-
 
 
 }

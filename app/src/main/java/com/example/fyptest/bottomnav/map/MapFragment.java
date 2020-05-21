@@ -1,18 +1,18 @@
 package com.example.fyptest.bottomnav.map;
+
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.graphics.PointF;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -20,14 +20,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
+
 import com.example.fyptest.R;
-import com.kiowa.bluetoothlocatability.BluetoothLeService;
-import com.kiowa.bluetoothlocatability.utilities.BeaconScreenPoint;
-import com.kiowa.bluetoothlocatability.utilities.Constants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
-import com.mapbox.geojson.Geometry;
-import com.mapbox.geojson.GeometryCollection;
 import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
@@ -47,12 +43,11 @@ import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
-import com.mapbox.mapboxsdk.style.sources.GeoJsonOptions;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
+
 import org.json.JSONObject;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -60,15 +55,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import timber.log.Timber;
-
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 import static com.mapbox.mapboxsdk.plugins.offline.ui.RegionSelectionFragment.TAG;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconSize;
-import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textField;
+
 
 public class MapFragment extends Fragment {
 
@@ -94,8 +87,7 @@ public class MapFragment extends Fragment {
     private static final String PROPERTY_NAME = "name";
     private List<Feature> featureList;
 
-    private HashMap<Integer, LatLng> hotspot_coordinates = new HashMap<Integer, LatLng>()
-    {{
+    private HashMap<Integer, LatLng> hotspot_coordinates = new HashMap<Integer, LatLng>() {{
 
         put(1, new LatLng(52.220981660099426, -6.936063118323176));
         put(2, new LatLng(52.22118175829205, -6.93624326952629));
@@ -107,7 +99,7 @@ public class MapFragment extends Fragment {
     private LinearLayoutManager layout_manager;
 
     private void initFeatureCollection() {
-        featureCollection = FeatureCollection.fromFeatures(new Feature[] {});
+        featureCollection = FeatureCollection.fromFeatures(new Feature[]{});
         featureList = new ArrayList<>();
         if (featureCollection != null) {
             // Obtaining an iterator for the entry set
@@ -116,18 +108,19 @@ public class MapFragment extends Fragment {
 
             // Iterate through HashMap entries(Key-Value pairs)
             System.out.println("HashMap Key-Value Pairs : ");
-            while(it.hasNext()){
-                Map.Entry me = (Map.Entry)it.next();
-                System.out.println("Key is: "+me.getKey() +
+            while (it.hasNext()) {
+                Map.Entry me = (Map.Entry) it.next();
+                System.out.println("Key is: " + me.getKey() +
                         " & " +
-                        " value is: "+me.getValue());
-                LatLng latLng = (LatLng)me.getValue();
+                        " value is: " + me.getValue());
+                LatLng latLng = (LatLng) me.getValue();
                 featureList.add(Feature.fromGeometry(Point.fromLngLat(latLng.getLongitude(),
                         latLng.getLatitude())));
             }
             featureCollection = FeatureCollection.fromFeatures(featureList);
         }
     }
+
     private void initMarkerIcons(@NonNull Style loadedMapStyle) {
         loadedMapStyle.addImage(SYMBOL_ICON_ID, BitmapFactory.decodeResource(
                 this.getResources(), R.drawable.red_marker));
@@ -136,7 +129,7 @@ public class MapFragment extends Fragment {
                 iconImage(SYMBOL_ICON_ID),
                 iconAllowOverlap(true),
                 iconSize(.3f),
-                iconOffset(new Float[] {0f, -4f})
+                iconOffset(new Float[]{0f, -4f})
         ));
     }
 
@@ -160,8 +153,8 @@ public class MapFragment extends Fragment {
         int x = 0;
         // Iterate through HashMap entries(Key-Value pairs)
         System.out.println("HashMap Key-Value Pairs : ");
-        while(it.hasNext()){
-            Map.Entry me = (Map.Entry)it.next();
+        while (it.hasNext()) {
+            Map.Entry me = (Map.Entry) it.next();
             SingleRecyclerViewLocation singleLocation = new SingleRecyclerViewLocation();
             singleLocation.setChapter((Integer) me.getKey());
             singleLocation.setName(nameArray[x]);
@@ -180,10 +173,12 @@ public class MapFragment extends Fragment {
     }
 
     @SuppressLint("LogNotTimber")
-    public View onCreateView (@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Mapbox.getInstance(getActivity(), getString(R.string.access_token));
+
         // MapViewModel mapViewModel = ViewModelProviders.of(this).get(MapViewModel.class);
         View root = inflater.inflate(R.layout.fragment_map, container, false);
+
         // This contains the MapView in XML and needs to be called after the access token is configured.
         mapView = root.findViewById(R.id.mapView);
         recyclerView = root.findViewById(R.id.rv_on_map);
@@ -194,14 +189,14 @@ public class MapFragment extends Fragment {
             this.mapboxMap = mapboxMap;
             mapboxMap.addOnMapClickListener(point -> {
                 PointF screenPoint = mapboxMap.getProjection().toScreenLocation(point);
-                Log.i("Point","(" + screenPoint.x + "," + screenPoint.y + ")");
+                Log.i("Point", "(" + screenPoint.x + "," + screenPoint.y + ")");
 
                 Set entrySet = hotspot_coordinates.entrySet();
                 Iterator it = entrySet.iterator();
                 int x = 0;
                 // Iterate through HashMap entries(Key-Value pairs)
-                while(it.hasNext()){
-                    Map.Entry me = (Map.Entry)it.next();
+                while (it.hasNext()) {
+                    Map.Entry me = (Map.Entry) it.next();
                     LatLng hotspot = (LatLng) me.getValue();
                     PointF hotspotpoint = mapboxMap.getProjection().toScreenLocation(hotspot);
                     Double start_x = screenPoint.x - 30.0;
@@ -210,39 +205,17 @@ public class MapFragment extends Fragment {
                     Double end_y = screenPoint.y + 50.0;
                     Float hotspotpoint_x = hotspotpoint.x;
                     Float hotspotpoint_y = hotspotpoint.y;
-                    if(hotspotpoint_x <= end_x && hotspotpoint_x >= start_x && hotspotpoint_y <= end_y && hotspotpoint_y >= start_y){
-                        SingleRecyclerViewLocation singleLocation = new SingleRecyclerViewLocation();
-                        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-                        Double lat_hotspot = ((LatLng) me.getValue()).getLatitude();
-                        Double long_hotspot = ((LatLng) me.getValue()).getLongitude();
+                    if (hotspotpoint_x <= end_x && hotspotpoint_x >= start_x && hotspotpoint_y <= end_y && hotspotpoint_y >= start_y) {
                         LatLng selectedLocationLatLng = (LatLng) me.getValue();
                         CameraPosition newCameraPosition = new CameraPosition.Builder()
                                 .target(selectedLocationLatLng)
                                 .build();
                         mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition));
-                        layout_manager.scrollToPosition((Integer) me.getKey()-1);
-
-
+                        layout_manager.scrollToPosition((Integer) me.getKey() - 1);
                     }
                 }
-
                 return true;
             });
-
-            //region location stuff kiowa
-//            IntentFilter i_filter = new IntentFilter();
-//            i_filter.addAction(Constants.RESULTS);
-//            getApplicationContext().registerReceiver(receiver, i_filter);
-//            HashMap<Integer, BeaconScreenPoint> bsp_map = new HashMap<>();
-//
-//            for(Map.Entry<Integer,LatLng> entry : hotspot_coordinates.entrySet()){
-//                PointF point = mapboxMap.getProjection().toScreenLocation(entry.getValue());
-//                bsp_map.put(entry.getKey(), new BeaconScreenPoint(point.x , point.y));
-//            }
-//            final Intent intent = new Intent(getApplicationContext(), BluetoothLeService.class);
-//            intent.putExtra("Beacons", bsp_map);
-//            getApplicationContext().startService(intent);
-            //endregion
 
             locationAdapter = new RecyclerViewAdapter(createRecyclerViewLocations(), mapboxMap);
             initFeatureCollection();
@@ -276,7 +249,7 @@ public class MapFragment extends Fragment {
                     .withTextAnchor("top")
             );
 
-            Symbol stairs= symbolManager.create(new SymbolOptions()
+            Symbol stairs = symbolManager.create(new SymbolOptions()
                     .withLatLng(new LatLng(52.221082, -6.936182))
                     .withIconImage(entrance)
                     .withIconSize(1.5f)
@@ -378,11 +351,4 @@ public class MapFragment extends Fragment {
 
         return root;
     }
-    private BroadcastReceiver receiver = new BroadcastReceiver(){
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //TODO
-        }
-    };
 }

@@ -1,29 +1,19 @@
 package com.example.fyptest.bottomnav.map;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.fyptest.R;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
-
 import java.util.List;
 
 public class RecyclerViewAdapter extends
@@ -43,7 +33,6 @@ public class RecyclerViewAdapter extends
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cardview_symbol_layer, parent, false);
         return new MyViewHolder(itemView);
-
     }
 
     @Override
@@ -62,10 +51,7 @@ public class RecyclerViewAdapter extends
                         .build();
                 map.easeCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition));
             }
-
-
         });
-
     }
 
     @Override
@@ -77,10 +63,6 @@ public class RecyclerViewAdapter extends
         return position;
     }
 
-
-
-
-
     static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView chapter;
         TextView name;
@@ -88,7 +70,6 @@ public class RecyclerViewAdapter extends
         CardView singleCard;
         Button rvButton;
         ItemClickListener clickListener;
-
 
         MyViewHolder(View view){
             super(view);
@@ -111,10 +92,5 @@ public class RecyclerViewAdapter extends
         public void onClick(View view) {
             clickListener.onClick(view, getLayoutPosition());
         }
-
-
-
-
-
     }
 }

@@ -9,13 +9,21 @@ public class SingleRecyclerViewLocation {
     private String description;
     private LatLng locationCoordinates;
 
-    public int getChapter() { return chapter; }
+    public int getChapter() {
+        return chapter;
+    }
 
-    public void setChapter(int chapter) { this.chapter = chapter; }
+    public void setChapter(int chapter) {
+        this.chapter = chapter;
+    }
 
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getName() {
         return name;
@@ -29,5 +37,7 @@ public class SingleRecyclerViewLocation {
         return locationCoordinates;
     }
 
-    public void setLocationCoordinates(LatLng locationCoordinates) { this.locationCoordinates = locationCoordinates; }
+    public void setLocationCoordinates(LatLng locationCoordinates) {
+        this.locationCoordinates = locationCoordinates;
+    }
 }

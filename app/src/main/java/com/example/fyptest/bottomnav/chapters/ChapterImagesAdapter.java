@@ -16,6 +16,7 @@ public class ChapterImagesAdapter extends BaseAdapter {
     public ChapterImagesAdapter(Context mCtx) {
         this.mCtx = mCtx;
     }
+
     public int[] chapter_naval = {
             R.mipmap.defenses,
             R.mipmap.defenses2,
@@ -53,24 +54,9 @@ public class ChapterImagesAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ImageView iv = new ImageView(mCtx);
-
-
         iv.setImageResource(chapter_naval[i]);
-
-//        ViewPager myViewPager = viewGroup.findViewById(R.id.myViewPager);
-//
-//        int page = myViewPager.getCurrentItem();
-//
-//        if(page == 0){
-//            iv.setImageResource(chapter_bridge[i]);
-//        }
-//        else{
-            iv.setImageResource(chapter_naval[i]);
-//        }
-
         iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
         iv.setLayoutParams(new GridView.LayoutParams(250, 250));
-
         return iv;
     }
 

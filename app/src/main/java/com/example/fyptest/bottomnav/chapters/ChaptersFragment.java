@@ -4,15 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+
 import com.example.fyptest.R;
 import com.wajahatkarim3.easyflipviewpager.BookFlipPageTransformer;
 
 
 public class ChaptersFragment extends Fragment {
-
 
     private ViewPager myViewPager;
     private ChaptersViewPagerAdapter pagerAdapter;

@@ -3,7 +3,6 @@ package com.example.fyptest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -11,8 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class SplashScreenActivity extends AppCompatActivity {
-    private static int msplashTimeOut=5000;
-    private static int delay =2000;
+    private static int msplashTimeOut = 5000;
+    private static int delay = 2000;
     private Animation fade_in;
     private ImageView logo1;
 
@@ -27,11 +26,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         logo1.startAnimation(fade_in);
 
         new Handler().postDelayed(() -> {
-                Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
+            Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
 
-        },msplashTimeOut);
+        }, msplashTimeOut);
 
     }
 }

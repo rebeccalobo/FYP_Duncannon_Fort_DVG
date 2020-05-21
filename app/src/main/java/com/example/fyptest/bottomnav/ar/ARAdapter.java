@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -63,9 +62,6 @@ public class ARAdapter extends BaseAdapter {
         iv.setMaxHeight(390);
         nameTextView.setText(ar_titles[i]);
         nameTextView.setTextSize(20);
-
-
-
 
 
         return view;

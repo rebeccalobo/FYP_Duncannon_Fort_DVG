@@ -2,7 +2,6 @@ package com.example.fyptest.bottomnav.chapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -16,10 +15,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.fyptest.HomeActivity;
 import com.example.fyptest.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -29,7 +26,7 @@ public class ChaptersViewPagerAdapter extends PagerAdapter implements View.OnCli
     String[] nameArray, descArray, contentArray;
     LayoutInflater mInflater;
 
-    public ChaptersViewPagerAdapter(Context ctx){
+    public ChaptersViewPagerAdapter(Context ctx) {
         this.mCtx = ctx;
     }
 
@@ -55,16 +52,14 @@ public class ChaptersViewPagerAdapter extends PagerAdapter implements View.OnCli
 
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public Object instantiateItem(ViewGroup cont, int pos){
+    public Object instantiateItem(ViewGroup cont, int pos) {
         nameArray = mCtx.getResources().getStringArray(R.array.name_array);
         descArray = mCtx.getResources().getStringArray(R.array.desc_array);
         contentArray = mCtx.getResources().getStringArray(R.array.content_array);
 
 
-
-
         mInflater = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = mInflater.inflate(R.layout.chapters_swiper_layout,cont,false);
+        View view = mInflater.inflate(R.layout.chapters_swiper_layout, cont, false);
         view.setBackgroundColor(Color.WHITE);
 
         ImageView mImage = view.findViewById(R.id.swiper_image);
@@ -88,9 +83,10 @@ public class ChaptersViewPagerAdapter extends PagerAdapter implements View.OnCli
         return view;
     }
 
-    public void destroyItem(ViewGroup cont, int pos, Object o){
+    public void destroyItem(ViewGroup cont, int pos, Object o) {
         cont.removeView((RelativeLayout) o);
     }
+
     @Override
     public void onClick(View v) {
         new IntentIntegrator(new Activity()).initiateScan();

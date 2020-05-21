@@ -16,7 +16,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     Context mCtx;
     LayoutInflater mInflater;
 
-    public ViewPagerAdapter(Context ctx){
+    public ViewPagerAdapter(Context ctx) {
         this.mCtx = ctx;
     }
 
@@ -28,10 +28,11 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     public int[] descriptions = {
             R.string.Compass,
-           R.string.Fort,
-           R.string.History,
+            R.string.Fort,
+            R.string.History,
 
     };
+
     @Override
     public int getCount() {
         return images.length;
@@ -43,9 +44,9 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
 
-    public Object instantiateItem(ViewGroup cont, int pos){
+    public Object instantiateItem(ViewGroup cont, int pos) {
         mInflater = (LayoutInflater) mCtx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = mInflater.inflate(R.layout.intro_swiper_layout,cont,false);
+        View view = mInflater.inflate(R.layout.intro_swiper_layout, cont, false);
         ImageView mImage = view.findViewById(R.id.swiper_image);
         TextView mDesc = view.findViewById(R.id.swiper_name);
         mImage.setImageResource(images[pos]);
@@ -54,7 +55,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         return view;
     }
 
-    public void destroyItem(ViewGroup cont, int pos, Object o){
-        cont.removeView((RelativeLayout)o);
+    public void destroyItem(ViewGroup cont, int pos, Object o) {
+        cont.removeView((RelativeLayout) o);
     }
 }
