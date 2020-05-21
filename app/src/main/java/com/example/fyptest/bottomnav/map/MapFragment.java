@@ -22,6 +22,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 import com.example.fyptest.R;
+import com.kiowa.bluetoothlocatability.bleApi.UserLocationCapability;
+import com.kiowa.bluetoothlocatability.utilities.BeaconScreenPoint;
+import com.kiowa.bluetoothlocatability.utilities.Constants;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
@@ -53,6 +56,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
@@ -96,7 +100,18 @@ public class MapFragment extends Fragment {
         put(5, new LatLng(52.220407509797525, -6.937396931973126));
 
     }};
+
+    private HashMap<Integer, BeaconScreenPoint> hotspot_beacons = new HashMap<Integer, BeaconScreenPoint>(){{
+        put(1, new BeaconScreenPoint(52.220981660099426, -6.936063118323176));
+        put(2, new BeaconScreenPoint(52.22118175829205, -6.93624326952629));
+        put(3, new BeaconScreenPoint(52.22078164956724, -6.936723769022336));
+        put(4, new BeaconScreenPoint(52.2206369355016, -6.936650790165885));
+        put(5, new BeaconScreenPoint(52.220407509797525, -6.937396931973126));
+    }};
     private LinearLayoutManager layout_manager;
+
+
+
 
     private void initFeatureCollection() {
         featureCollection = FeatureCollection.fromFeatures(new Feature[]{});
@@ -348,7 +363,13 @@ public class MapFragment extends Fragment {
 
         }));
 
-
+        ArrayList ar = new ArrayList<String>();
+        for(int i: hotspot_beacons.keySet()){
+            ar.add(String.valueOf(i));
+        }
+        //NOTE: Works on actual device with Bluetooth capabilities and not the tablet Emulator
+//        UserLocationCapability.Companion.startSystem(getApplicationContext(),
+//                hotspot_beacons, hotspot_beacons.get(1), ar);
         return root;
     }
 }
